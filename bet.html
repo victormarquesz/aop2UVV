@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Bet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="home.html" class="navHome">
+                <img src="img/home.png" alt="navHome">
+                <h1>Home</h1>
+            </a>
+            <a href="player.html" class="navPlayers">
+                <img src="img/player.png" alt="navPlayers">
+                <h1>Player</h1>
+            </a>
+            <a href="teams.html" class="navTeams">
+                <img src="img/teams.png" alt="navTeams">
+                <h1>Teams</h1>
+            </a>
+            <a href="news.html" class="navNews">
+                <img src="img/news.png" alt="navNews">
+                <h1>News</h1>
+            </a>
+            <a href="bet.html" class="navBet">
+                <img src="img/bet.png" alt="navBet">
+                <h1>Bet</h1>
+            </a>
+        </nav>
+    </header>
+    <main class="contentBet">
+        <h1></h1>
+        <div class="betForm">
+            <label for="team">Selecione o time</label>
+            <select id="team" name="team">
+                <option value="Flamengo">Flamengo</option>
+                <option value="Fluminense">Fluminense</option>
+                <option value="Corinthians">Corinthians</option>
+                <option value="Cruzeiro">Cruzeiro</option>
+            </select>
+
+            <label for="amount">Valor da aposta (R$)</label>
+            <input type="number" id="amount" name="amount" placeholder="Coloque o valor desejado" min="1">
+
+            <button type="submit" class="betButton">Apostar</button>
+        </div>
+
+        <div class="betInfo">
+            <h2>Detalhes das suas apostas</h2>
+            <p>Time: <span id="betTeam">None</span></p>
+            <p>Valor: R$<span id="betAmount">0</span></p>
+        </div>
+    </main>
+    <footer>
+        <ol>
+            <li> <img src="img/facebook.png" alt="facebookUVV"> exempleUVV</li>
+            <li> <img src="img/instagram.png" alt="instagramUVV"> @exempleUVV</li>
+            <li> <img src="img/o-email.png" alt="emailUVV"> exemple@uvv.com.br</li>
+        </ol>
+    </footer>
+    <script>
+        // Simple JS to update bet details
+        document.querySelector('.betButton').addEventListener('click', function () {
+            const team = document.getElementById('team').value;
+            const amount = document.getElementById('amount').value;
+
+            document.getElementById('betTeam').textContent = team;
+            document.getElementById('betAmount').textContent = amount;
+        });
+    </script>
+</body>
+
+</html>
